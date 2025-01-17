@@ -66,13 +66,15 @@ public class AdminController {
 	}
 	
 	
-	 @PostMapping("/logout")
-	    public ResponseEntity<?> logout(HttpSession session) {
-	        session.invalidate(); // Invalidate the session
-	        System.out.println("loggedout for Admin"+session.getId());
-	        return ResponseEntity.ok("Logout successful");
-	    }
-	
+	@PostMapping("/logout")
+	public ResponseEntity<?> logout(HttpSession session) {
+		System.out.println("sessionlogout");
+	    String sessionId = session.getId();
+	    session.invalidate();
+	    System.out.println("Logged out for Admin, session invalidated: " + sessionId);
+	    return ResponseEntity.ok("Logout successful");
+	}
+
 	 @DeleteMapping("/deleteadmin/{id}")
 	 public ResponseEntity<?> deleteadmin(@PathVariable Integer id)
 		{
