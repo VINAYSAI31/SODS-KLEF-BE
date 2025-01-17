@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class Activities {
@@ -13,17 +14,31 @@ public class Activities {
 	int id;
 	String title;
 	String Des;
+	public Activities(int id, String title, String des, byte[] imagedata) {
+		super();
+		this.id = id;
+		this.title = title;
+		Des = des;
+		this.imagedata = imagedata;
+	}
+	@Lob
+	byte[] imagedata;
+	public byte[] getImagedata() {
+		return imagedata;
+	}
+
+
+	public void setImagedata(byte[] imagedata) {
+		this.imagedata = imagedata;
+	}
+
+
 	public Activities() {
 		
 	}
 	
 	
-	public Activities(int id, String title, String des) {
-		super();
-		this.id = id;
-		this.title = title;
-		Des = des;
-	}
+	
 	public int getId() {
 		return id;
 	}

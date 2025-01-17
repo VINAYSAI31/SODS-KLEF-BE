@@ -25,4 +25,10 @@ public class ProjectServiceImp implements ProjectService {
 		return projectrepo.findAll();
 	}
 
+	@Override
+	public void deleteproject(int id) {
+		
+		 projectrepo.deleteById(id);
+	}
+
 }

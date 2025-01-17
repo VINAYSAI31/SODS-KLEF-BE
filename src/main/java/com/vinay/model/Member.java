@@ -4,14 +4,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class Member {
 
 	
 	public Member() {}
-	public Member(int id, String name, String role, String bio, String linkedin, String email,
-			String github, String year) {
+	
+	public Member(int id, String name, String role, String bio, String linkedin, String email, String github,
+			String year, byte[] imagedata) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -21,7 +23,9 @@ public class Member {
 		this.email = email;
 		this.github = github;
 		this.year = year;
+		this.imagedata = imagedata;
 	}
+
 	public int getId() {
 		return id;
 	}
@@ -81,4 +85,15 @@ public class Member {
 	    private String email;
 	    private String github;
 	    private String year;
+	    
+	    @Lob
+	    private byte[] imagedata;
+
+		public byte[] getImagedata() {
+			return imagedata;
+		}
+		public void setImagedata(byte[] imagedata) {
+			this.imagedata = imagedata;
+		}
+	    
 }
