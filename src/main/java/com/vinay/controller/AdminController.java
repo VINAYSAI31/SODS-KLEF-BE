@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@CrossOrigin(origins = {"https://sods-admin.vercel.app", "http://localhost:3000"}, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
