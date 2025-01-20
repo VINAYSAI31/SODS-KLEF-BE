@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @CrossOrigin(origins = {"https://sods-admin.vercel.app", "http://localhost:3000"}, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/admin")
-public class AdminController {
+public class AdminController{
 
 	@Autowired
 	private AdminServiceImplementation adminservice;
